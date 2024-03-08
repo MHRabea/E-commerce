@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Ojuju : ["Ojuju" , "sans-serif"],
+        Madimi : ["Madimi" , "sans-serif"],
+        Dosis : ["Dosis" , "sans-serif"],
+      }
+    },
   },
   plugins: [],
 }

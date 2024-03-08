@@ -1,8 +1,9 @@
+import Navbar from "./Components/Navbar/navbar";
 
 function App() {
   return (
     <div className="flex items-center justify-center">
-     App
+     <Navbar />
     </div>
   );
 }
