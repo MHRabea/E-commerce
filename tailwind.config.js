@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         Ojuju : ["Ojuju" , "sans-serif"],
-        Madimi : ["Madimi" , "sans-serif"],
+        Madimi : ["Madimi One" , "sans-serif"],
         Dosis : ["Dosis" , "sans-serif"],
       }
     },
