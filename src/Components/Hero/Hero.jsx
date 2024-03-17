@@ -250,7 +250,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute top-[0rem] left-[0rem] w-[10rem] h-[10rem] rounded-full z-10 border-2 border-black"
+          className="absolute top-[5rem] left-[0rem] w-[10rem] h-[10rem] rounded-full z-10 border-2 border-black"
         >
           <img
             src={hijabGirl}
