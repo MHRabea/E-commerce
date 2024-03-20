@@ -15,7 +15,7 @@ const Item = (props) => {
     whileInView="animate"
     transition={{
         duration: 0.3,
-        delay: 0.1 * props.id,
+        delay: 0.01 * props.number,
         stiffness: 400,
         damping: 17,
         type: "spring",

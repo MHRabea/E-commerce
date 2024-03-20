@@ -1,8 +1,7 @@
-import React from "react";
-import data_product from "../Assets/data";
+import new_collections from "../Assets/new_collections"
 import Item from "../Item/Item";
 
-const Popular = () => {
+const NewCollections = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-10 p-10 bg-gradient-to-b from-sky-300">
 
@@ -11,7 +10,7 @@ const Popular = () => {
     </div>
 
       <div className="flex flex-wrap items-center justify-center gap-4">
-        {data_product.map((item, i) => (
+        {new_collections.map((item, i) => (
           <Item
             name={item.name}
             number={item.number}
@@ -24,7 +23,7 @@ const Popular = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Popular;
+export default NewCollections

@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { IoMdArrowForward } from "react-icons/io";
 import hero from "../Assets/hero_image.png";
 import girlBlack from "../Assets/exclusive_image.png";
-import hijabGirl from "../Assets/product_6.png";
-import girlBlue from "../Assets/product_12.png";
-import manBlue from "../Assets/product_20.png";
-import kidBlue from "../Assets/product_25.png";
-import kidBlack from "../Assets/product_35.png";
+import hijabGirl from "../Assets/product_6_no_bg.png";
+import girlBlue from "../Assets/product_12_no_bg.png";
+import manBlue from "../Assets/product_20_no_bg.png";
+import kidBlue from "../Assets/product_25_no_bg.png";
+import kidBlack from "../Assets/product_35_no_bg.png";
 
 const Hero = () => {
   const letters = [
