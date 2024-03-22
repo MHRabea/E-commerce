@@ -20,8 +20,8 @@ const Item = (props) => {
         damping: 17,
         type: "spring",
     }}
-     className="flex flex-col items-center justify-center w-[20rem] ">
-      <img src={props.img} alt="popular-product-img" />
+     className="flex flex-col items-center justify-center w-[20rem] space-y-3 ">
+      <img src={props.img} alt="popular-product-img" className="rounded-xl border-2 border-black" />
       <div className="w-full">
         <p>{props.name}</p>
       </div>

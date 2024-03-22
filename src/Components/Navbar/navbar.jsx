@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "../Assets/E-commerce.png";
+import { useLocation } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { LuLogIn } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,6 +9,27 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [selectedMenu, setSelectedMenu] = useState("shop");
   const [toggleNav, setToggleNav] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const path = location.pathname;
+    switch (path) {
+      case "/":
+        setSelectedMenu("shop");
+        break;
+      case "/men":
+        setSelectedMenu("men");
+        break;
+      case "/women":
+        setSelectedMenu("women");
+        break;
+      case "/kids":
+        setSelectedMenu("kids");
+        break;
+      default:
+        setSelectedMenu("shop");
+    }
+  }, [location.pathname]);
 
   const handleToggleNav = () => {
     setToggleNav(!toggleNav);
@@ -31,6 +53,8 @@ const Navbar = () => {
       },
     },
   };
+
+  
 
   return (
     <div className="flex items-center justify-center font-Dosis font-medium w-screen bg-sky-300">
@@ -141,7 +165,7 @@ const Navbar = () => {
             }}
             onClick={handleToggleNav}
             className={`md:hidden flex flex-col items-center justify-center space-y-1 z-50 ${
-              toggleNav && "fixed top-4 right-5"
+              toggleNav && "fixed top-[2.5rem] right-[2rem]"
             }`}
             animate={toggleNav ? "open" : "closed"}
           >
@@ -530,7 +554,7 @@ const Navbar = () => {
                       justify-center rounded-r-full text-xl text-white 
                       ${selectedMenu === "kids" && ""}`}
                           >
-                            Women
+                            Kids
                           </p>
                         </Link>
                       </motion.div>

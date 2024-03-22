@@ -6,7 +6,7 @@ const NewCollections = () => {
     <div className="flex flex-col items-center justify-center gap-10 p-10 bg-gradient-to-b from-sky-300">
 
     <div>
-        <p className="border-b-2 border-sky-700 p-2 text-2xl">Popular In Women</p>
+        <p className="border-b-2 border-sky-700 p-2 text-2xl">New Collections</p>
     </div>
 
       <div className="flex flex-wrap items-center justify-center gap-4">

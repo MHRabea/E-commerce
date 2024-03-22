@@ -1,6 +1,11 @@
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/navbar';
+import Footer from './Components/Footer/Footer';
+import MenBanner from './Components/Banners/MenBanner';
+import WomenBanner from './Components/Banners/WomenBanner';
+import KidsBanner from './Components/Banners/KidsBanner';
+
 
 const Shop = lazy(() => import('./Pages/Shop'));
 const Category = lazy(() => import('./Pages/Category'));
@@ -17,9 +22,9 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<Shop />} />
-            <Route path="/men" element={<Category category="men" />} />
-            <Route path="/women" element={<Category category="women" />} />
-            <Route path="/kids" element={<Category category="kids" />} />
+            <Route path="/men" element={<Category banner={<MenBanner />} category="men" />} />
+            <Route path="/women" element={<Category banner={<WomenBanner />} category="women" />} />
+            <Route path="/kids" element={<Category banner={<KidsBanner />} category="kids" />} />
             <Route path="/product" element={<Product />}>
               <Route path=":productId" element={<Product />} />
             </Route>
@@ -28,6 +33,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
           </Routes>
         </Suspense>
+        <Footer />
       </BrowserRouter>
     </div>
   );
