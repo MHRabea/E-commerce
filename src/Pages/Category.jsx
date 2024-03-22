@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import Item from "../Components/Item/Item";
+import { motion } from "framer-motion";
 
 const Category = (props) => {
   const { all_product } = useContext(ShopContext);
@@ -20,13 +21,20 @@ const Category = (props) => {
               <p className="font-Madimi">36</p>
               <p>Products</p>
             </div>
-            <div
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scsale: 0.9 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 17,
+              }}
               className="flex items-center justify-center space-x-2 px-4 py-2 bg-black 
-            text-white rounded-full"
+            text-white rounded-full cursor-pointer"
             >
               <p>Sort by</p>
               <RiArrowDropDownLine size={20} />
-            </div>
+            </motion.div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 w-full">
             {all_product.map((item, i) => {
@@ -47,12 +55,22 @@ const Category = (props) => {
               }
             })}
           </div>
-          <div>
-            <button className="flex items-center justify-center px-4 py-2 rounded-full 
-            text-2xl bg-black text-white mt-10">
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scsale: 0.9 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 17,
+            }}
+          >
+            <button
+              className="flex items-center justify-center px-4 py-2 rounded-full 
+            text-2xl bg-black text-white mt-10"
+            >
               Explore More
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
