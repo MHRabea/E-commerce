@@ -20,10 +20,12 @@ const Category = (props) => {
               <p className="font-Madimi">36</p>
               <p>Products</p>
             </div>
-            <div className="flex items-center justify-center space-x-2 px-4 py-2 bg-black 
-            text-white rounded-full">
+            <div
+              className="flex items-center justify-center space-x-2 px-4 py-2 bg-black 
+            text-white rounded-full"
+            >
               <p>Sort by</p>
-              <RiArrowDropDownLine size={20}/>
+              <RiArrowDropDownLine size={20} />
             </div>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 w-full">
@@ -44,6 +46,12 @@ const Category = (props) => {
                 return null;
               }
             })}
+          </div>
+          <div>
+            <button className="flex items-center justify-center px-4 py-2 rounded-full 
+            text-2xl bg-black text-white mt-10">
+              Explore More
+            </button>
           </div>
         </div>
       </div>
