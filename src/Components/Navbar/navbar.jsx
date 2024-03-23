@@ -26,6 +26,12 @@ const Navbar = () => {
       case "/kids":
         setSelectedMenu("kids");
         break;
+      case "/login":
+        setSelectedMenu("login");
+        break;
+      case "/cart":
+        setSelectedMenu("cart");
+        break;
       default:
         setSelectedMenu("shop");
     }
@@ -53,8 +59,6 @@ const Navbar = () => {
       },
     },
   };
-
-  
 
   return (
     <div className="flex items-center justify-center font-Dosis font-medium w-screen bg-sky-300">
@@ -197,7 +201,7 @@ const Navbar = () => {
               }}
             ></motion.span>
           </motion.button>
-          {/* login  buttons */}
+          {/* login buttons */}
           <div
             className="overflow-hidden hidden md:flex  w-[3rem] h-[3rem]
                  items-center justify-center"
@@ -224,6 +228,7 @@ const Navbar = () => {
                     stiffness: 400,
                     damping: 17,
                   }}
+                  onClick={() => setSelectedMenu("login")}
                   className="cursor-pointer"
                 >
                   <Link
@@ -237,7 +242,7 @@ const Navbar = () => {
               </div>
             </motion.div>
           </div>
-          {/* cart and count */}
+          {/* Cart and Count */}
           <div
             className="overflow-hidden w-[4rem] h-[4rem]
                 hidden md:flex items-center justify-center"
@@ -304,8 +309,8 @@ const Navbar = () => {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="fixed z-40 right-0 top-0 h-screen w-[16rem] bg-gradient-to-b from-sky-500 to-red-200 flex items-center
-               justify-center flex-col overflow-hidden md:hidden"
+                className="fixed z-40 right-0 top-0 h-screen w-[16rem] bg-gradient-to-b from-red-500 flex items-center
+               justify-center flex-col overflow-hidden md:hidden backdrop-blur-md"
               >
                 <div
                   className="flex flex-col items-center justify-center w-full h-full overflow-hidden space-y-3
@@ -349,14 +354,6 @@ const Navbar = () => {
                         selectedMenu === "shop" && "scale-125"
                       }`}
                         >
-                          <div
-                            style={{
-                              borderColor:
-                                selectedMenu === "shop" ? "black" : "white",
-                            }}
-                            className={`border-white border-2 rounded-full w-[2.5rem] h-[2.5rem] 
-                        ${selectedMenu === "shop" && "border-black"}`}
-                          ></div>
                           <p
                             style={{
                               borderColor:
@@ -365,7 +362,7 @@ const Navbar = () => {
                                 selectedMenu === "shop" ? "black" : "white",
                             }}
                             className={`w-[8rem] h-[2rem] border-2 border-white flex items-center
-                      justify-center rounded-r-full text-xl text-white 
+                      justify-center rounded-full text-xl text-white 
                       ${selectedMenu === "shop" && ""}`}
                           >
                             Shop
@@ -410,14 +407,6 @@ const Navbar = () => {
                         selectedMenu === "men" && "scale-125"
                       }`}
                         >
-                          <div
-                            style={{
-                              borderColor:
-                                selectedMenu === "men" ? "black" : "white",
-                            }}
-                            className={`border-white border-2 rounded-full w-[2.5rem] h-[2.5rem] 
-                        ${selectedMenu === "men" && "border-black"}`}
-                          ></div>
                           <p
                             style={{
                               borderColor:
@@ -425,7 +414,7 @@ const Navbar = () => {
                               color: selectedMenu === "men" ? "black" : "white",
                             }}
                             className={`w-[8rem] h-[2rem] border-2 border-white flex items-center
-                      justify-center rounded-r-full text-xl text-white 
+                      justify-center rounded-full text-xl text-white 
                       ${selectedMenu === "men" && ""}`}
                           >
                             Men
@@ -472,14 +461,6 @@ const Navbar = () => {
                         selectedMenu === "women" && "scale-125"
                       }`}
                         >
-                          <div
-                            style={{
-                              borderColor:
-                                selectedMenu === "women" ? "black" : "white",
-                            }}
-                            className={`border-white border-2 rounded-full w-[2.5rem] h-[2.5rem] 
-                        ${selectedMenu === "women" && "border-black"}`}
-                          ></div>
                           <p
                             style={{
                               borderColor:
@@ -488,7 +469,7 @@ const Navbar = () => {
                                 selectedMenu === "women" ? "black" : "white",
                             }}
                             className={`w-[8rem] h-[2rem] border-2 border-white flex items-center
-                      justify-center rounded-r-full text-xl text-white 
+                      justify-center rounded-full text-xl text-white 
                       ${selectedMenu === "women" && ""}`}
                           >
                             Women
@@ -535,14 +516,6 @@ const Navbar = () => {
                         selectedMenu === "kids" && "scale-125"
                       }`}
                         >
-                          <div
-                            style={{
-                              borderColor:
-                                selectedMenu === "kids" ? "black" : "white",
-                            }}
-                            className={`border-white border-2 rounded-full w-[2.5rem] h-[2.5rem] 
-                        ${selectedMenu === "kids" && "border-black"}`}
-                          ></div>
                           <p
                             style={{
                               borderColor:
@@ -551,7 +524,7 @@ const Navbar = () => {
                                 selectedMenu === "kids" ? "black" : "white",
                             }}
                             className={`w-[8rem] h-[2rem] border-2 border-white flex items-center
-                      justify-center rounded-r-full text-xl text-white 
+                      justify-center rounded-full text-xl text-white 
                       ${selectedMenu === "kids" && ""}`}
                           >
                             Kids
@@ -575,7 +548,7 @@ const Navbar = () => {
                       animate="animate"
                       exit="exit"
                       transition={{
-                        delay: 0.4,
+                        delay: 0.5,
                       }}
                       className=" "
                     >
@@ -638,12 +611,16 @@ const Navbar = () => {
                       animate="animate"
                       exit="exit"
                       transition={{
-                        delay: 0.4,
+                        delay: 0.6,
                       }}
                     >
                       <div className="flex items-center justify-center">
                         <motion.div
-                          whileHover={{ scale: 1.1 }}
+                         whileHover={
+                            selectedMenu === "login"
+                              ? { scale: 1 }
+                              : { scale: 1.1 }
+                          }
                           whileTap={{ scale: 0.9 }}
                           transition={{
                             type: "spring",
@@ -653,9 +630,16 @@ const Navbar = () => {
                           className="cursor-pointer"
                         >
                           <Link
+                            onClick={() => setSelectedMenu("login")}
                             to="/login"
-                            className={`w-[3rem] h-[3rem] border-2 border-black rounded-full
-                          flex items-center justify-center relative hover:border-white hover:text-white`}
+                            style={{
+                              color:
+                                selectedMenu === "login" && "black",
+                              borderColor : 
+                                 selectedMenu === "login" && "black",
+                            }}
+                            className={`w-[3rem] h-[3rem] border-2 border-white rounded-full
+                          flex items-center justify-center relative text-white ${selectedMenu === "login" && "scale-110"}`}
                           >
                             <LuLogIn size={20} />
                           </Link>
