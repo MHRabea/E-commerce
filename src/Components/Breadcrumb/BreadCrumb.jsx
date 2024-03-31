@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const BreadCrumb = (props) => {
     const {product} = props
   return (
-    <div className="flex items-start justify-center text-sm">
+    <div className="flex items-start justify-start text-sm space-x-1 w-full">
       <span>Home</span>
       <IoIosArrowForward size={22}/>
       <span>Shop</span>

@@ -14,7 +14,7 @@ const Category = (props) => {
       <div className="flex flex-col w-screen bg-gradient-to-b from-red-500 items-center justify-center">
         <div className="w-full flex flex-col p-5 items-center justify-center">
           <div className="w-full flex flex-col space-y-3 items-center justify-center py-[2rem]">
-            <div className="flex items-center justify-center space-x-3 text-2xl">
+            <div className="flex items-center justify-center space-x-3 text-xl">
               <p>Showing </p>
               <p className="font-Madimi">1-12</p>
               <p>out of</p>

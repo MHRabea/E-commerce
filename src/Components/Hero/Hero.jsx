@@ -109,7 +109,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute top-[20rem] right-[10rem] w-[15rem] h-[15rem] rounded-full
+          className="absolute top-[21.5rem] right-[0rem] w-[11rem] h-[11rem] rounded-full
         z-10 border-black border-2"
         >
           <img src={hero} alt="" className="object-cover" />
@@ -127,7 +127,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute top-[0rem] right-[0rem] w-[15rem] h-[20rem] rounded-full
+          className="absolute top-[0rem] right-[0rem] w-[13rem] h-[18rem] rounded-full
           z-10 border-black border-2"
         >
           <img src={girlBlack} alt="" className="object-cover" />
@@ -145,7 +145,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute bottom-[1.5rem] right-[14rem] w-[10rem] h-[10rem] rounded-full 
+          className="absolute top-[21.5rem] right-[11.5rem] w-[11rem] h-[11rem] rounded-full 
           border-2 border-black z-10"
         >
           <img
@@ -168,7 +168,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute bottom-[0rem] right-0 w-[12rem] h-[14rem] rounded-full z-10 
+          className="absolute bottom-[0rem] right-0 w-[11rem] h-[13rem] rounded-full z-10 
           border-black border-2"
         >
           <img
@@ -190,7 +190,7 @@ const Hero = () => {
             type: "spring",
             stiffness: 400,
           }}
-          className="absolute top-[25rem] right-0 w-[8rem] h-[10rem] rounded-full border-2
+          className="absolute bottom-[0rem] right-[11.5rem] w-[11rem] h-[13rem] rounded-full border-2
           border-black z-10"
         >
           <img
