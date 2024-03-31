@@ -60,7 +60,7 @@ const Offers = () => {
           whileInView="animate"
           className=""
         >
-          <img src={girlBlack} alt="Exclusive-image" />
+          <img src={girlBlack} alt="Exclusive" />
         </motion.div>
       </div>
     </div>
