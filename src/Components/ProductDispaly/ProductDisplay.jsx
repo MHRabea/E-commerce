@@ -7,12 +7,19 @@ import { ShopContext } from "../../Context/ShopContext";
 import Item from "../Item/Item";
 
 const ProductDisplay = (props) => {
-  const { all_product , addToCart} = useContext(ShopContext);
+  const { all_product, addToCart } = useContext(ShopContext);
   const [selectedSize, setSelectedSize] = useState("");
   const [relatedProducts, setRelatedProducts] = useState([]);
   const { product } = props;
+  const [showMessage, setShowMessage] = useState(false);
 
-  
+  const handleAddToCart = (productId) => {
+    addToCart(productId);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 1000);
+  };
 
   useEffect(() => {
     const filteredProducts = all_product.filter(
@@ -176,11 +183,14 @@ const ProductDisplay = (props) => {
             <button
               className="flex items-center space-x-2 border-black border-2 px-4 py-2 text-xl 
           rounded-lg hover:bg-red-500 hover:text-white"
-          onClick={()=> {addToCart(product.id)}}
+              onClick={() => {
+                handleAddToCart(product.id);
+              }}
             >
               <p>Add To Cart</p>
               <FaCartArrowDown size={25} />
             </button>
+            {showMessage && <p className="flex p-2 items-center justify-center">Item added to cart!</p>}
           </div>
           {/* tags and categories */}
           <div>
@@ -198,7 +208,9 @@ const ProductDisplay = (props) => {
       {/* Related Products */}
       <div className="flex flex-col space-y-3 items-center">
         <div>
-          <p className="border-b-2 border-sky-700 p-2 text-2xl">Related Products</p>
+          <p className="border-b-2 border-sky-700 p-2 text-2xl">
+            Related Products
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 w-full">
@@ -206,7 +218,7 @@ const ProductDisplay = (props) => {
             relatedProducts.map((item, i) => {
               if (product.id !== item.id) {
                 return (
-                  <Item 
+                  <Item
                     name={item.name}
                     number={item.number}
                     id={item.id}

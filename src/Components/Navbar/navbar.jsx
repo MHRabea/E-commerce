@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import logo from "../Assets/E-commerce.png";
 import { useLocation } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { LuLogIn } from "react-icons/lu";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Navbar = () => {
   const [selectedMenu, setSelectedMenu] = useState("");
   const [toggleNav, setToggleNav] = useState(false);
   const location = useLocation();
-
+  const { getTotalCartItems } = useContext(ShopContext);
   useEffect(() => {
     const path = location.pathname;
     switch (path) {
@@ -168,20 +169,25 @@ const Navbar = () => {
               damping: 17,
             }}
             onClick={handleToggleNav}
-            className={`md:hidden flex flex-col items-center justify-center space-y-1 z-50 ${
+            className={`md:hidden flex flex-col  items-center justify-center space-y-1 z-50 ${
               toggleNav && "fixed top-[2.5rem] right-[2rem]"
             }`}
             animate={toggleNav ? "open" : "closed"}
           >
             <motion.span
-              className={`h-[0.10rem] w-7 rounded-2xl bg-sky-900 ${
+              className={`h-[0.10rem] w-7 rounded-2xl bg-sky-900 relative ${
                 toggleNav && "bg-white"
               }`}
               variants={{
                 closed: { opacity: 1, rotate: "0deg" },
                 open: { opacity: 1, rotate: "-45deg", y: 5 },
               }}
-            ></motion.span>
+            >
+              {" "}
+              {getTotalCartItems() > 0 && !toggleNav && (
+                <div className="w-3 h-3 rounded-full absolute bottom-0 right-0 bg-red-500 z-50"></div>
+              )}
+            </motion.span>
             <motion.span
               className={`h-[0.10rem] w-7 rounded-2xl bg-sky-900 ${
                 toggleNav && "bg-white"
@@ -294,8 +300,14 @@ const Navbar = () => {
                           selectedMenu === "cart" && ""
                         }`}
                     >
-                      0
+                      {getTotalCartItems()}
                     </div>
+                    {getTotalCartItems() > 0 && (
+                      <div
+                        className={`bg-red-500 flex items-center justify-center rounded-full
+                        w-3 h-3 absolute top-0 left-0 z-10`}
+                      ></div>
+                    )}
                   </Link>
                 </motion.div>
               </div>
@@ -589,8 +601,14 @@ const Navbar = () => {
                           selectedMenu === "cart" && ""
                         }`}
                             >
-                              0
+                              {getTotalCartItems()}
                             </div>
+                            {getTotalCartItems() > 0 && (
+                              <div
+                                className={`bg-red-500 flex items-center justify-center rounded-full
+                        w-3 h-3 absolute top-0 left-0 z-10`}
+                              ></div>
+                            )}
                           </Link>
                         </motion.div>
                       </div>
@@ -616,7 +634,7 @@ const Navbar = () => {
                     >
                       <div className="flex items-center justify-center">
                         <motion.div
-                         whileHover={
+                          whileHover={
                             selectedMenu === "login"
                               ? { scale: 1 }
                               : { scale: 1.1 }
@@ -633,13 +651,13 @@ const Navbar = () => {
                             onClick={() => setSelectedMenu("login")}
                             to="/login"
                             style={{
-                              color:
-                                selectedMenu === "login" && "black",
-                              borderColor : 
-                                 selectedMenu === "login" && "black",
+                              color: selectedMenu === "login" && "black",
+                              borderColor: selectedMenu === "login" && "black",
                             }}
                             className={`w-[3rem] h-[3rem] border-2 border-white rounded-full
-                          flex items-center justify-center relative text-white ${selectedMenu === "login" && "scale-110"}`}
+                          flex items-center justify-center relative text-white ${
+                            selectedMenu === "login" && "scale-110"
+                          }`}
                           >
                             <LuLogIn size={20} />
                           </Link>
