@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const Item = (props) => {
+  const handleItemClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -24,6 +30,8 @@ const Item = (props) => {
       >
         <Link to={`/product/${props.id}`}>
           <img
+            onClick={handleItemClick}
+
             src={props.img}
             alt="popular-product-img"
             className="rounded-xl border-2 border-black"

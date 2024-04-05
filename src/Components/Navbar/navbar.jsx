@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [selectedMenu, setSelectedMenu] = useState("shop");
+  const [selectedMenu, setSelectedMenu] = useState("");
   const [toggleNav, setToggleNav] = useState(false);
   const location = useLocation();
 
@@ -33,7 +33,7 @@ const Navbar = () => {
         setSelectedMenu("cart");
         break;
       default:
-        setSelectedMenu("shop");
+        setSelectedMenu("");
     }
   }, [location.pathname]);
 
