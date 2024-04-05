@@ -38,6 +38,7 @@ const Navbar = () => {
     }
   }, [location.pathname]);
 
+
   const handleToggleNav = () => {
     setToggleNav(!toggleNav);
   };
@@ -184,7 +185,7 @@ const Navbar = () => {
               }}
             >
               {" "}
-              {getTotalCartItems() > 0 && !toggleNav && (
+              {getTotalCartItems() > 0 && !toggleNav && location.pathname !== "/cart" && (
                 <div className="w-3 h-3 rounded-full absolute bottom-0 right-0 bg-red-500 z-50"></div>
               )}
             </motion.span>
@@ -302,7 +303,8 @@ const Navbar = () => {
                     >
                       {getTotalCartItems()}
                     </div>
-                    {getTotalCartItems() > 0 && (
+                    {/* red dot indicator */}
+                    {getTotalCartItems() > 0 && location.pathname !== "/cart" && (
                       <div
                         className={`bg-red-500 flex items-center justify-center rounded-full
                         w-3 h-3 absolute top-0 left-0 z-10`}
@@ -603,7 +605,9 @@ const Navbar = () => {
                             >
                               {getTotalCartItems()}
                             </div>
-                            {getTotalCartItems() > 0 && (
+                                                {/* red dot indicator */}
+
+                            {getTotalCartItems() > 0 && location.pathname !== "/cart" && (
                               <div
                                 className={`bg-red-500 flex items-center justify-center rounded-full
                         w-3 h-3 absolute top-0 left-0 z-10`}

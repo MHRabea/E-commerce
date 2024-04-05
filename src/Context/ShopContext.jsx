@@ -17,7 +17,6 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev) => {
             const updatedCart = { ...prev, [itemId]: prev[itemId] + 1 };
-            console.log(updatedCart); // Log the updated cart
             return updatedCart;
         });
     };
@@ -25,7 +24,6 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev) => {
             const updatedCart = { ...prev, [itemId]: prev[itemId] - 1 };
-            console.log(updatedCart); // Log the updated cart
             return updatedCart;
         });
     };
