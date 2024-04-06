@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import logo from "../Assets/E-commerce.png";
+import logo from "../Assets/cart logo.png";
 import { useLocation } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
 import { LuLogIn } from "react-icons/lu";

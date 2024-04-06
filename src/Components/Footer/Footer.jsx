@@ -1,4 +1,4 @@
-import logo from "../Assets/E-commerce.png";
+import logo from "../Assets/cart logo.png";
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
@@ -43,7 +43,7 @@ const Footer = () => {
           }}
           className="flex flex-col items-center justify-center space-y-2 border-b-2"
         >
-          <div className="w-[6rem] h-[6rem] flex items-center justify-center rounded-full bg-cyan-100 p-2">
+          <div className="w-[6rem] h-[6rem] flex items-center justify-center rounded-full bg-cyan-100 ">
             <img src={logo} alt="logo" className="w-full h-full" />
           </div>
           <h1 className="font-Madimi text-xl text-cyan-50 ">E-Commerce</h1>
