@@ -63,7 +63,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-center font-Dosis font-medium w-screen bg-sky-300">
+    <div className="flex items-center justify-center font-Dosis font-medium w-screen bg-red-300">
       <div className="w-full max-w-[99rem] flex items-center justify-between h-[6rem] p-8">
         {/* Nav Left Side and Logo */}
 

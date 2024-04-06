@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <div
       className="p-5 xl:p-10 w-screen flex  items-center  justify-between h-[54rem]
-    md:h-[50rem] bg-gradient-to-b from-sky-300"
+    md:h-[50rem] bg-gradient-to-b from-red-300"
     >
       {/* left Side */}
       <div

@@ -8,7 +8,7 @@ const Login = () => {
     whileInView: { opacity: 1, y: 0 },
   };
   return (
-    <div className="flex items-center justify-center bg-gradient-to-b from-sky-300 w-screen min-h-[80vh]">
+    <div className="flex items-center justify-center bg-gradient-to-b from-red-300 w-screen min-h-[80vh]">
       <motion.div
         className="flex flex-col px-2 py-10 border-black border-2 w-[80%] md:w-[45%] items-center justify-center 
       space-y-5 rounded-lg bg-gradient-to-b from-red-300"

@@ -11,7 +11,7 @@ const CartItem = () => {
     getTotalCartItems,
   } = useContext(ShopContext);
   return (
-    <div className="flex flex-col  w-screen items-center justify-center bg-gradient-to-b from-sky-300 p-10 space-y-10">
+    <div className="flex flex-col  w-screen items-center justify-center bg-gradient-to-b from-red-300 p-10 space-y-10">
       {/* cart items */}
       <div className="flex flex-wrap w-full items-center justify-center gap-5">
         {all_product.map((item, i) => {
@@ -19,15 +19,15 @@ const CartItem = () => {
             return (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center"
+                className="flex flex-col items-center justify-center  w-[8rem] border-x-2 border-black px-2 rounded-lg"
               >
                 {/* item image */}
                 <div className="w-full py-2">
-                  <img src={item.image} alt={item.name} className="w-full" />
+                  <img src={item.image} alt={item.name} className="w-full rounded-lg" />
                 </div>
                 {/* item price and details */}
                 <div className="flex flex-col w-full space-y-4">
-                  <p>{item.name}</p>
+                  <p className="text-sm font-bold">{item.name}</p>
                   <div className="w-full flex flex-col space-y-5">
                     <div className="flex w-full items-center  justify-between border-b-2 border-black">
                       <p className="font-bold">Price :</p>

@@ -21,7 +21,7 @@ const Footer = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="w-screen bg-cyan-500 p-10 flex items-center justify-center flex-col md:flex-row ">
+    <div className="w-screen bg-red-500 p-10 flex items-center justify-center flex-col md:flex-row ">
       <div
         className="flex flex-col md:flex-row items-center justify-center md:justify-between w-full
       max-w-[80rem] space-y-10 md:space-y-0 md:space-x-10"

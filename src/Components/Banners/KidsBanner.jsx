@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import kid from "../Assets/product_28_no_bg.png";
 const KidsBanner = () => {
   return (
-    <div className="flex items-center justify-center w-screen h-[20rem]  bg-gradient-to-b from-sky-300">
+    <div className="flex items-center justify-center w-screen h-[20rem]  bg-gradient-to-b from-red-300">
       <div
         className="w-full max-w-[60rem] px-10 flex items-center justify-center h-full overflow-hidden
      "
