@@ -141,7 +141,7 @@ const CartItem = () => {
       </div>
       {getTotalCartItems() > 0 ? (
         /* cart totals */
-        <div className="flex flex-col md:flex-row md:space-x-8 w-full items-center justify-center py-5 space-y-5 md:space-y-0">
+        <div className="flex flex-col md:flex-row md:space-x-8 w-full items-center justify-center py-5 space-y-5 md:space-y-0 flex-wrap">
           {/* cart totals left  */}
           <div className="w-full flex flex-col space-y-5">
             <motion.div
