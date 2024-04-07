@@ -9,7 +9,7 @@ const Product = () => {
   const {productId} = useParams()
   const product = all_product.find((e)=> e.id === Number(productId))
   return (
-    <div className='p-10 flex flex-col bg-gradient-to-b from-sky-300 space-y-4 w-screen'>
+    <div className='p-10 flex flex-col bg-gradient-to-b from-red-300 space-y-4 w-screen'>
       <BreadCrumb product={product}/>
       <ProductDisplay product={product}/>
     </div>
