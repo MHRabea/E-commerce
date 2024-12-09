@@ -1,10 +1,11 @@
+import Item from "../Item/Item";
 import React from "react";
 import data_product from "../Assets/data";
-import Item from "../Item/Item";
 
 const Popular = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-10 p-10 bg-gradient-to-b from-sky-300">
+    <div className="flex flex-col items-center justify-center gap-10 p-10 
+    bg-gradient-to-b from-sky-300 w-screen">
 
     <div>
         <p className="border-b-2 border-sky-700 p-2 text-2xl">Popular In Women</p>

@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const Item = (props) => {
   const handleItemClick = () => {
     window.scrollTo({
@@ -13,18 +14,10 @@ const Item = (props) => {
       className="flex flex-col items-center justify-center w-[20rem] font-Madimi"
     >
       <motion.div
-        variants={{
-          initial: { scale: 0.7 },
-          animate: { scale: 1 },
-        }}
-        initial="initial"
-        whileInView="animate"
+       initial={{opacitu:0}}
+       animate={{opacity:1}}
         transition={{
           duration: 0.3,
-          delay: 0.01 * props.number,
-          stiffness: 400,
-          damping: 17,
-          type: "spring",
         }}
         className="flex flex-col items-center justify-center w-[20rem] space-y-3 "
       >

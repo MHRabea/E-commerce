@@ -1,67 +1,74 @@
-import girlBlack from "../Assets/exclusive_image.png";
 import { motion } from "framer-motion";
+import product6 from "../Assets/product_6_no_bg.png";
+
 const Offers = () => {
   return (
-    <div className="flex items-start md:items-center justify-between w-screen p-10 bg-gradient-to-b from-red-300">
-      {/* left side */}
-      <motion.div
-        variants={{
-          initial: {
-            y: 40,
-            scale: 0.8,
-          },
-          animate: {
-            y: 0,
-            scale: 1,
-          },
-        }}
-        initial="initial"
-        whileInView="animate"
-        className="w-[25%] space-y-3"
-      >
-        <div>
-          <h1 className="text-2xl font-Madimi md:text-[3rem] md:leading-[3rem]">
-            Exclusive Offers For you
-          </h1>
-        </div>
-        <div>
-          <p className="text-xl font-serif underline md:text-3xl">
-            Only for the best Selling Products
-          </p>
-        </div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 17,
-          }}
+    <div
+      className="flex items-center justify-center bg-gradient-to-b from-red-300 h-[30rem]
+    w-screen overflow-hidden"
+    >
+      <div className="flex flex-col items-center justify-between w-full h-[30rem] md:flex-row px-12">
+        <div
+          className="flex flex-col items-center md:items-start justify-center gap-5 w-full 
+                md:text-left text-center h-full"
         >
-          <button className="p-2 text-xl bg-red-400 rounded-lg md:text-3xl text-white">
-            Check Now
-          </button>
-        </motion.div>
-      </motion.div>
-      {/* right side */}
-      <div className="w-[75%] flex items-center justify-end">
-        <motion.div
-          variants={{
-            initial: {
-              y: 40,
-              scale: 0.8,
-            },
-            animate: {
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center justify-center"
+          >
+            <p className="text-2xl font-Madimi md:text-6xl">
+              Exclusive Offers For you
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{
               y: 0,
-              scale: 1,
-            },
-          }}
-          initial="initial"
-          whileInView="animate"
-          className=""
-        >
-          <img src={girlBlack} alt="Exclusive" />
-        </motion.div>
+              opacity: 1,
+            }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center justify-center"
+          >
+            <p className="text-xl font-serif underline md:text-3xl">
+              Only for the best Selling Products
+            </p>
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ y: 100, opacity: 0 }}
+            viewport={{ once: true }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.5,
+              },
+            }}
+          >
+            <button
+              className="p-2 text-xl bg-red-400 rounded-lg md:text-3xl text-white 
+            hover:text-sky-300 hover:drop-shadow-customBlack text-center flex items-center justify-center"
+            >
+              Check Now
+            </button>
+          </motion.div>
+        </div>
+        <div className="w-full flex items-center justify-center h-[30rem] relative">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="absolute w-[12rem] md:w-[15rem] h-full bottom-0 flex items-end justify-center"
+          >
+            <img src={product6} alt="product_6" />
+          </motion.div>
+        </div>
       </div>
     </div>
   );

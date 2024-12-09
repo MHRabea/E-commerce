@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
-import womenJacket from "../Assets/product_1_no_bg.png";
+import product6women from "../Assets/product_6_no_bg.png"
+
 const WomenBanner = () => {
   return (
-    <div className="flex items-center justify-center w-screen h-[20rem]  bg-gradient-to-b from-red-300">
+    <div className="flex items-center justify-center bg-gradient-to-b from-red-300 h-[30rem]
+    w-screen overflow-hidden">
       <div
-        className="w-full max-w-[60rem] px-10 flex items-center justify-center h-full overflow-hidden
-     "
+        className="flex flex-col items-center justify-between w-full h-[30rem] md:flex-row px-12"
       >
         {/* left Side */}
-        <div className="w-1/4 flex flex-col space-y-2">
+        <div className="flex flex-col items-center md:items-center justify-center gap-5 w-full 
+                md:text-left text-center h-full">
           <motion.div
             variants={{
               initial: { y: 70, opacity: 0 },
@@ -36,7 +38,7 @@ const WomenBanner = () => {
                 stiffness: 400,
                 damping: 7,
               }}
-              className="text-[4rem] leading-[4rem] font-Dosiss text-red-500"
+              className="text-6xl md:text-8xl font-Dosiss text-red-500"
             >
               50%
             </motion.h1>
@@ -54,7 +56,7 @@ const WomenBanner = () => {
                 duration: 0.5,
                 delay: 0.15,
               }}
-              className="flex flex-col space-y-2"
+              className="flex flex-col gap-2"
             >
               <h1 className="text-2xl ">Limited Time Offer</h1>
               <h2 className="text-xl font-medium">12:00:00</h2>
@@ -88,21 +90,23 @@ const WomenBanner = () => {
           </motion.div>
         </div>
         {/* right Side */}
-        <motion.div
-          variants={{
-            initial: { y: 70, opacity: 0 },
-            visible: { y: 0, opacity: 1 },
-          }}
-          initial="initial"
-          whileInView="visible"
-          transition={{
-            duration: 0.5,
-            delay: 0.2,
-          }}
-          className="w-3/4 h-full flex justify-end"
-        >
-          <img src={womenJacket} alt="discount" className="h-full" />
-        </motion.div>
+        <div className="flex items-center justify-center w-full relative h-[30rem]">
+          <motion.div
+            variants={{
+              initial: { y: 70, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+            }}
+            initial="initial"
+            whileInView="visible"
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            className="absolute w-[12rem] md:w-[15rem] h-full bottom-0 flex items-end justify-center"
+          >
+            <img src={product6women} alt="discount" />
+          </motion.div>
+        </div>
       </div>
     </div>
   );
